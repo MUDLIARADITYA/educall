@@ -3,7 +3,7 @@ import axios from 'axios';
 export const getAIResponse = async (prompt) => {
   try {
     const token = localStorage.getItem('token');
-    // const baseURL = process.env.REACT_APP_API_BASE_URL || 'https://educonnect-1frr.onrender.com/';
+    // const baseURL = process.env.REACT_APP_API_BASE_URL || 'https://edu-connect-c2rq.onrender.com';
     
     const response = await axios.post(
       `/api/ai`, 

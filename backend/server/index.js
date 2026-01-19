@@ -20,7 +20,7 @@ dotenv.config();
 // Middlewares
 // app.use(cors());
 app.use(cors({
-  origin: ['https://educonnect-1frr.onrender.com/', 'http://localhost:5173'],
+  origin: ['https://edu-connect-c2rq.onrender.com', 'http://localhost:5173'],
   credentials: true
 }));
 app.use(express.json());
