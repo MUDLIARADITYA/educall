@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/auth';
+const API_URL = 'https://edu-connect-c2rq.onrender.com/api/auth';
 
 export const register = async (name, email, password, role) => {
   const response = await axios.post(`${API_URL}/register`, {

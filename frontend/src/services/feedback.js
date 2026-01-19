@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/feedback';
+const API_URL = 'https://edu-connect-c2rq.onrender.com/api/feedback';
 
 const submitFeedback = async (questionId, rating, feedbackText, token) => {
   const config = {

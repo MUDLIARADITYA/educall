@@ -9,7 +9,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-          target: 'http://localhost:5000',
+          target: 'https://edu-connect-c2rq.onrender.com',
          changeOrigin: true,
         secure: false
       }
