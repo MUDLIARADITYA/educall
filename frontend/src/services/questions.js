@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/question';
+const API_URL = 'https://educonnect-1frr.onrender.com//api/question';
 
 const createQuestion = async (text, imageUrl, token) => {
   const config = {
