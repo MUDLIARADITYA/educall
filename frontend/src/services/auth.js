@@ -1,21 +1,21 @@
-import axios from 'axios';
-
-const API_URL = 'https://edu-connect-c2rq.onrender.com/api/auth';
+import api from "../api"; // adjust path if needed
 
 export const register = async (name, email, password, role) => {
-  const response = await axios.post(`${API_URL}/register`, {
+  const response = await api.post("/api/auth/register", {
     name,
     email,
     password,
     role,
   });
+
   return response.data;
 };
 
 export const login = async (email, password) => {
-  const response = await axios.post(`${API_URL}/login`, {
+  const response = await api.post("/api/auth/login", {
     email,
     password,
   });
+
   return response.data;
 };

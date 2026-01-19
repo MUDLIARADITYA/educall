@@ -1,19 +1,16 @@
-import axios from 'axios';
-
-const API_URL = 'https://edu-connect-c2rq.onrender.com/api/feedback';
+import api from "../api"; // adjust path if needed
 
 const submitFeedback = async (questionId, rating, feedbackText, token) => {
-  const config = {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  };
-
-  const response = await axios.post(
-    API_URL,
+  const response = await api.post(
+    "/api/feedback",
     { questionId, rating, feedbackText },
-    config
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
   );
+
   return response.data;
 };
 

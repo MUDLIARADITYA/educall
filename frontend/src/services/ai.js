@@ -1,25 +1,23 @@
-import axios from 'axios';
+import api from "../api"; // adjust path if needed
 
 export const getAIResponse = async (prompt) => {
   try {
-    const token = localStorage.getItem('token');
-    // const baseURL = process.env.REACT_APP_API_BASE_URL || 'https://edu-connect-c2rq.onrender.com';
-    
-    const response = await axios.post(
-      `/api/ai`, 
-      { prompt }, 
+    const token = localStorage.getItem("token");
+
+    const response = await api.post(
+      "/api/ai",
+      { prompt },
       {
         headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json'
-        }
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
       }
     );
+
     return response.data.response;
   } catch (error) {
-    console.error('Error getting AI response:', error);
+    console.error("Error getting AI response:", error);
     throw error;
   }
 };
-
-

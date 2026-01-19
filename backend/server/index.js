@@ -145,16 +145,16 @@ mongoose
   .then(() => console.log("✅ MongoDB connected"))
   .catch((err) => console.error("❌ MongoDB error:", err));
 
-/* ------------------ FRONTEND (EXPRESS 5 SAFE) ------------------ */
-const frontendPath = path.join(__dirname, "../../frontend/dist");
+// /* ------------------ FRONTEND (EXPRESS 5 SAFE) ------------------ */
+// const frontendPath = path.join(__dirname, "../../frontend/dist");
 
-// Serve static files
-app.use(express.static(frontendPath));
+// // Serve static files
+// app.use(express.static(frontendPath));
 
-// ✅ EXPRESS 5 + NODE 22 SAFE FALLBACK
-app.get(/^(?!\/api).*/, (req, res) => {
-  res.sendFile(path.join(frontendPath, "index.html"));
-});
+// // ✅ EXPRESS 5 + NODE 22 SAFE FALLBACK
+// app.get(/^(?!\/api).*/, (req, res) => {
+//   res.sendFile(path.join(frontendPath, "index.html"));
+// });
 
 /* ------------------ START SERVER ------------------ */
 const PORT = process.env.PORT || 5000;

@@ -1,18 +1,19 @@
-import axios from 'axios';
+import api from "../api"; // adjust path if needed
 
-const API_URL = 'https://edu-connect-c2rq.onrender.com/api/teachers';
+const submitFeedback = async (questionId, rating, feedbackText, token) => {
+  const response = await api.post(
+    "/api/feedback",
+    { questionId, rating, feedbackText },
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
 
-const getTeacherStats = async (token) => {
-  const config = {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  };
-
-  const response = await axios.get(`${API_URL}/me/stats`, config);
   return response.data;
 };
 
 export default {
-  getTeacherStats,
+  submitFeedback,
 };
