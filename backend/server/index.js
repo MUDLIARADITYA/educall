@@ -125,8 +125,6 @@ app.use(
   })
 );
 
-// ✅ PRE-FLIGHT SUPPORT (VERY IMPORTANT)
-app.options("*", cors());
 
 /* ------------------ MIDDLEWARES ------------------ */
 app.use(express.json());
