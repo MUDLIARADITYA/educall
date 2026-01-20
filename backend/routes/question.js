@@ -33,6 +33,7 @@ router.post('/', protect, isStudent, async (req, res) => {
 
 router.get('/open', protect, isTeacher, async (req, res) => { 
     try { 
+        //Fetch all unanswered questions and include the student’s name and email for display on the teacher dashboard.”
         const openQuestions = await Question.find({ isAccepted: false }).populate('student', 'name email'); 
         res.json(openQuestions); 
     } 
